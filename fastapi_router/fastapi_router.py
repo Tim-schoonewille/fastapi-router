@@ -38,10 +38,9 @@ class FastAPIRouter:
             app.include_router(router)
 
         for sub_folder in sub_folders:
-            new_folder = os.path.join(folder, sub_folder) if folder else sub_folder
-            # new_folder = (
-            #     os.path.join(folder, sub_folder)
-            #     if folder
-            #     else sub_folder
-            # )
+            new_folder = (
+                os.path.join(folder, sub_folder)
+                if folder
+                else sub_folder
+            )
             self.init_routers(app, new_folder)
